@@ -44,9 +44,16 @@ Buzz Desktop opens the required owner-review form. Select **OpenCode**, retain *
 bash -n bootstrap.sh
 jq -e . .plugin/plugin.json >/dev/null
 bash ./test.sh
+bash ./prereq-check.sh
 buzz pack validate .
 buzz pack inspect .
 ```
+
+`prereq-check.sh` reports each live-acceptance dependency as PROVEN / MISSING / SKIP
+without printing secret material. It exits non-zero until `buzz`, the relay,
+`BUZZ_PRIVATE_KEY`, OpenCode, and the ANVIL source-truth files are all ready.
+
+Neo probe receipt: `LIVE_ACCEPTANCE_NEO_2026-08-01.md`.
 
 ## Authority model
 
