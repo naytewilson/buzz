@@ -1,0 +1,20 @@
+{
+  "id": "macbrains-anvil-operator",
+  "name": "MacBrains ANVIL Operator",
+  "version": "0.1.0",
+  "description": "A Buzz persona for operating ANVIL through its existing governance, control, receipt, and worktree contracts.",
+  "author": "MacBrains",
+  "license": "Apache-2.0",
+  "keywords": ["anvil", "macbrains", "agent", "opencode", "workflow"],
+  "personas": ["personas/anvil-operator.persona.md"],
+  "pack_instructions": "instructions.md",
+  "defaults": {
+    "thread_replies": true,
+    "broadcast_replies": false,
+    "triggers": {
+      "mentions": true,
+      "keywords": ["ANVIL", "anvil"],
+      "all_messages": false
+    }
+  }
+}
