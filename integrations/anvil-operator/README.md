@@ -22,15 +22,19 @@ This integration gives ANVIL a visible Buzz control room and a Buzz-managed Open
 
 ## Run
 
-From this directory:
+From this directory, read the private key silently so it is not stored in shell history:
 
 ```bash
-export BUZZ_PRIVATE_KEY='nsec1...'
+read -r -s -p 'Buzz owner private key: ' BUZZ_PRIVATE_KEY
+printf '\n'
+export BUZZ_PRIVATE_KEY
 export BUZZ_RELAY_URL='http://localhost:3000'
+bash ./test.sh
 bash ./bootstrap.sh
+unset BUZZ_PRIVATE_KEY
 ```
 
-Do not commit or paste the private key. The script reads it only from the current process environment.
+Do not commit, paste, log, or include the private key in a receipt. The script reads it only from the current process environment.
 
 Buzz Desktop opens the required owner-review form. Select **OpenCode**, retain **owner-only**, and save. The new agent is added to the ANVIL channel automatically.
 
